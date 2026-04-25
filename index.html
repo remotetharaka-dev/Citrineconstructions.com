@@ -1,0 +1,2391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="theme-color" content="#0B3D91">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <title>Citrine Constructions | Premium Construction Company Sri Lanka</title>
+    <meta name="description" content="Citrine Constructions: Award-winning construction company in Sri Lanka. Residential, commercial & industrial projects. 200+ projects completed. Free consultation.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0B3D91;
+            --navy-light: #1E5CB3;
+            --navy-dark: #06205C;
+            --gold: #F59E0B;
+            --gold-light: #FBBF24;
+            --gold-dark: #D97706;
+            --white: #FFFFFF;
+            --gray-50: #F8FAFC;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-300: #CBD5E1;
+            --gray-400: #94A3B8;
+            --gray-500: #64748B;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1E293B;
+            --gray-900: #0F172A;
+            
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow: 0 4px 6px -2px rgba(0,0,0,0.05), 0 10px 15px -3px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
+            --shadow-lg: 0 20px 35px -8px rgba(0,0,0,0.07), 0 10px 10px -5px rgba(0,0,0,0.03);
+            --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--gray-800);
+            line-height: 1.6;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Loading Animation */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.4s;
+        }
+
+        #loader.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loader-logo {
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(28px, 8vw, 36px);
+            font-weight: 800;
+            color: white;
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        .loader-logo span {
+            display: block;
+            font-size: clamp(16px, 5vw, 20px);
+            font-weight: 500;
+            letter-spacing: 8px;
+            color: var(--gold);
+            margin-top: 4px;
+        }
+
+        .loader-line {
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 0 auto;
+            animation: lineGrow 1.2s ease-out 0.3s forwards;
+            border-radius: 3px;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes lineGrow {
+            from { width: 0; }
+            to { width: min(200px, 60vw); }
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(11, 61, 145, 0.06);
+            transition: all 0.3s;
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow);
+            border-bottom-color: transparent;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        @media (min-width: 768px) {
+            .header-inner {
+                height: 88px;
+            }
+        }
+
+        .logo {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-citrine {
+            font-family: 'Manrope', sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--navy);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .logo-constructions {
+            font-family: 'Manrope', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        @media (min-width: 768px) {
+            .logo-citrine {
+                font-size: 24px;
+                letter-spacing: 6px;
+            }
+            .logo-constructions {
+                font-size: 14px;
+                letter-spacing: 5px;
+            }
+        }
+
+        .nav {
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .nav {
+                display: flex;
+                align-items: center;
+                gap: 48px;
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
+            border-radius: 2px;
+        }
+
+        .nav-link:hover {
+            color: var(--navy);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header-phone {
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .header-phone {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+                color: white;
+                padding: 12px 24px;
+                border-radius: 50px;
+                font-weight: 600;
+                font-size: 14px;
+                text-decoration: none;
+                transition: all 0.3s;
+                box-shadow: 0 8px 20px -6px rgba(245, 158, 11, 0.4);
+            }
+            
+            .header-phone:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 12px 25px -8px rgba(245, 158, 11, 0.5);
+            }
+        }
+
+        .mobile-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--navy);
+            border: none;
+            border-radius: 14px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .mobile-toggle:active {
+            background: var(--navy-dark);
+            transform: scale(0.95);
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-toggle {
+                display: none;
+            }
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0 60px;
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                padding: 120px 0 80px;
+            }
+        }
+
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(245, 158, 11, 0.06) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.04) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 750px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(245, 158, 11, 0.12);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--gold);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .hero-badge i {
+            font-size: 11px;
+        }
+
+        .hero-title {
+            font-size: clamp(36px, 10vw, 68px);
+            font-weight: 800;
+            line-height: 1.15;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .hero-title span {
+            position: relative;
+            color: var(--gold);
+            display: inline-block;
+        }
+
+        .hero-title span::after {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: rgba(245, 158, 11, 0.15);
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .hero-text {
+            font-size: 18px;
+            color: rgba(255,255,255,0.85);
+            max-width: 580px;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 767px) {
+            .hero-text {
+                font-size: 16px;
+            }
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 60px;
+        }
+
+        @media (min-width: 480px) {
+            .hero-buttons {
+                flex-direction: row;
+                gap: 16px;
+            }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 32px;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            min-height: 56px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: white;
+            box-shadow: 0 12px 30px -8px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        @media (hover: hover) {
+            .btn-primary:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 20px 40px -10px rgba(245, 158, 11, 0.5);
+            }
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-secondary:active {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        @media (hover: hover) {
+            .btn-secondary:hover {
+                background: rgba(255, 255, 255, 0.12);
+                border-color: rgba(255, 255, 255, 0.25);
+                transform: translateY(-3px);
+            }
+        }
+
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .stat-item {
+            position: relative;
+        }
+
+        .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 30px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .stat-value {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1.1;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: rgba(255,255,255,0.55);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 767px) {
+            .hero-stats {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px 16px;
+            }
+            .stat-item:not(:last-child)::after {
+                display: none;
+            }
+            .stat-value {
+                font-size: 32px;
+            }
+            .stat-label {
+                font-size: 11px;
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        @media (min-width: 768px) {
+            .section {
+                padding: 100px 0;
+            }
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 56px;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .section-tag i {
+            font-size: 10px;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 7vw, 44px);
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .section-desc {
+            font-size: 18px;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 767px) {
+            .section-desc {
+                font-size: 16px;
+            }
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        @media (min-width: 640px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 32px;
+            }
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 36px 28px;
+            border-radius: 28px;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (hover: hover) {
+            .service-card:hover {
+                border-color: transparent;
+                box-shadow: var(--shadow-xl);
+                transform: translateY(-8px);
+            }
+        }
+
+        .service-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 32px;
+            box-shadow: 0 8px 20px -6px rgba(11, 61, 145, 0.3);
+        }
+
+        .service-icon i {
+            font-size: 32px;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 16px;
+        }
+
+        .service-card p {
+            color: var(--gray-500);
+            line-height: 1.6;
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-top: auto;
+            padding-top: 8px;
+        }
+
+        .service-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gray-600);
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .service-list li i {
+            color: var(--gold);
+            font-size: 12px;
+        }
+
+        /* ============ PROCESS SECTION - DESKTOP TIMELINE + MOBILE OPTIMIZED ============ */
+        .process-section {
+            background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 40%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 15% 30%, rgba(11, 61, 145, 0.02) 0%, transparent 40%),
+                radial-gradient(circle at 85% 70%, rgba(245, 158, 11, 0.02) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        /* Desktop Timeline */
+        .process-timeline {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .process-row {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            position: relative;
+            margin-bottom: 32px;
+        }
+
+        .process-row:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Number Circle */
+        .process-number-wrapper {
+            flex-shrink: 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-number {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 3px solid var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--navy);
+            box-shadow: 0 8px 24px rgba(11, 61, 145, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .process-number::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 2px dashed rgba(11, 61, 145, 0.15);
+            animation: spinSlow 20s linear infinite;
+        }
+
+        @keyframes spinSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .process-row:hover .process-number {
+            background: var(--navy);
+            color: white;
+            border-color: var(--gold);
+            transform: scale(1.1);
+            box-shadow: 0 12px 32px rgba(11, 61, 145, 0.25);
+        }
+
+        .process-row:hover .process-number::after {
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+
+        /* Connector Line */
+        .process-number-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 92px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: calc(100% + 32px);
+            background: linear-gradient(180deg, var(--navy) 0%, var(--gray-200) 60%, var(--gray-200) 100%);
+            z-index: 0;
+        }
+
+        .process-row:last-child .process-number-wrapper::before {
+            display: none;
+        }
+
+        /* Content Card */
+        .process-card {
+            flex: 1;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 24px;
+            padding: 40px 36px;
+            transition: all 0.4s;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            margin-left: 16px;
+        }
+
+        .process-row:hover .process-card {
+            border-color: var(--navy);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .process-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .process-step-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--gold-dark);
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .process-step-badge i {
+            font-size: 8px;
+        }
+
+        .process-duration {
+            font-size: 13px;
+            color: var(--gray-400);
+            font-weight: 500;
+        }
+
+        .process-card h4 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .process-card p {
+            color: var(--gray-500);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .process-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .process-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            color: var(--gray-600);
+            padding: 7px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .process-tag i {
+            color: var(--navy);
+            font-size: 10px;
+        }
+
+        .process-row:hover .process-tag {
+            background: var(--white);
+            border-color: var(--navy);
+            color: var(--navy);
+        }
+
+        .process-row:hover .process-tag i {
+            color: var(--gold);
+        }
+
+        /* ============ MOBILE ONLY OVERRIDES (< 768px) ============ */
+        @media (max-width: 767px) {
+            .process-timeline {
+                padding: 0;
+            }
+
+            .process-row {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: left;
+                margin-bottom: 20px;
+                gap: 0;
+            }
+
+            .process-row:last-child {
+                margin-bottom: 0;
+            }
+
+            .process-number-wrapper {
+                width: 100%;
+                padding-top: 0;
+                margin-bottom: 0;
+                justify-content: flex-start;
+            }
+
+            .process-number-wrapper::before {
+                display: none;
+            }
+
+            .process-number {
+                width: 48px;
+                height: 48px;
+                font-size: 20px;
+                border-radius: 14px;
+                border-width: 2px;
+                box-shadow: 0 4px 12px rgba(11, 61, 145, 0.15);
+            }
+
+            .process-number::after {
+                display: none;
+            }
+
+            .process-row:hover .process-number {
+                transform: scale(1.05);
+            }
+
+            .process-card {
+                margin-left: 0;
+                margin-top: 16px;
+                padding: 24px 20px;
+                border-radius: 20px;
+            }
+
+            .process-card-header {
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-bottom: 12px;
+            }
+
+            .process-step-badge {
+                font-size: 11px;
+                padding: 4px 12px;
+                letter-spacing: 1px;
+            }
+
+            .process-duration {
+                font-size: 12px;
+                margin-left: 0;
+            }
+
+            .process-card h4 {
+                font-size: 19px;
+                margin-bottom: 8px;
+            }
+
+            .process-card p {
+                font-size: 14px;
+                margin-bottom: 14px;
+                line-height: 1.6;
+            }
+
+            .process-tags {
+                gap: 6px;
+            }
+
+            .process-tag {
+                font-size: 12px;
+                padding: 5px 10px;
+                border-radius: 6px;
+            }
+
+            .process-row:hover .process-card {
+                transform: none;
+                border-color: var(--gray-200);
+            }
+
+            .process-card:active {
+                border-color: var(--navy);
+                background: var(--gray-50);
+                transform: scale(0.99);
+            }
+
+            .process-row:hover .process-tag {
+                background: var(--gray-50);
+                border-color: var(--gray-200);
+                color: var(--gray-600);
+            }
+
+            .process-row:hover .process-tag i {
+                color: var(--navy);
+            }
+        }
+
+        /* Guarantee Box */
+        .guarantee-box {
+            margin-top: 64px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            padding: 56px 48px;
+            border-radius: 36px;
+            text-align: center;
+            color: white;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guarantee-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 30% 40%, rgba(245, 158, 11, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(245, 158, 11, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 767px) {
+            .guarantee-box {
+                padding: 40px 24px;
+                border-radius: 28px;
+                margin-top: 48px;
+            }
+
+            .guarantee-box h3 {
+                font-size: 24px;
+            }
+
+            .guarantee-box p {
+                font-size: 15px;
+            }
+        }
+
+        .guarantee-icon-box {
+            width: 80px;
+            height: 80px;
+            background: rgba(245, 158, 11, 0.12);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 767px) {
+            .guarantee-icon-box {
+                width: 64px;
+                height: 64px;
+                border-radius: 18px;
+                margin-bottom: 20px;
+            }
+
+            .guarantee-icon-box i {
+                font-size: 28px;
+            }
+        }
+
+        .guarantee-icon-box i {
+            font-size: 36px;
+            color: var(--gold);
+        }
+
+        .guarantee-box h3 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .guarantee-box p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 650px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            line-height: 1.8;
+        }
+
+        /* Core Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        @media (min-width: 640px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .values-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 32px;
+            }
+        }
+
+        .value-card {
+            background: white;
+            padding: 44px 32px;
+            border-radius: 28px;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (hover: hover) {
+            .value-card:hover {
+                border-color: transparent;
+                box-shadow: var(--shadow-xl);
+                transform: translateY(-8px);
+            }
+        }
+
+        .value-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, rgba(11, 61, 145, 0.06) 0%, rgba(11, 61, 145, 0.02) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+            transition: all 0.3s;
+        }
+
+        .value-icon i {
+            font-size: 38px;
+            color: var(--navy);
+            transition: color 0.3s;
+        }
+
+        @media (hover: hover) {
+            .value-card:hover .value-icon {
+                background: var(--navy);
+            }
+            .value-card:hover .value-icon i {
+                color: var(--gold);
+            }
+        }
+
+        .value-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 20px;
+        }
+
+        .value-card p {
+            color: var(--gray-500);
+            line-height: 1.7;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .value-quote {
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 500;
+            font-size: 15px;
+            border-top: 1px solid var(--gray-200);
+            padding-top: 20px;
+            margin-top: auto;
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 480px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 28px;
+            }
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 40px 24px;
+            background: white;
+            border-radius: 24px;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (hover: hover) {
+            .feature-card:hover {
+                border-color: var(--navy);
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-4px);
+            }
+        }
+
+        .feature-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, rgba(11, 61, 145, 0.06) 0%, rgba(11, 61, 145, 0.02) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            transition: all 0.3s;
+        }
+
+        @media (hover: hover) {
+            .feature-card:hover .feature-icon {
+                background: var(--navy);
+            }
+        }
+
+        .feature-icon i {
+            font-size: 30px;
+            color: var(--navy);
+            transition: color 0.3s;
+        }
+
+        @media (hover: hover) {
+            .feature-card:hover .feature-icon i {
+                color: white;
+            }
+        }
+
+        .feature-card h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--gray-500);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: clamp(32px, 8vw, 48px);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .cta-desc {
+            font-size: 18px;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 36px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: white;
+            padding: 18px 44px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 12px 30px -8px rgba(245, 158, 11, 0.4);
+        }
+
+        .cta-btn:active {
+            transform: scale(0.98);
+        }
+
+        @media (hover: hover) {
+            .cta-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 25px 45px -12px rgba(245, 158, 11, 0.5);
+            }
+        }
+
+        /* Contact Section */
+        @media (max-width: 640px) {
+            #contact.section {
+                padding: 60px 0;
+            }
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--gray-200);
+            margin: 0 -12px;
+        }
+
+        @media (min-width: 640px) {
+            .contact-grid {
+                margin: 0;
+                border-radius: 36px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1.1fr;
+            }
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            padding: 32px 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media (min-width: 480px) {
+            .contact-info {
+                padding: 40px 28px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .contact-info {
+                padding: 56px 44px;
+            }
+        }
+
+        .contact-info h3 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 28px;
+        }
+
+        @media (min-width: 480px) {
+            .contact-info h3 {
+                font-size: 30px;
+                margin-bottom: 36px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .contact-info h3 {
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 480px) {
+            .contact-item {
+                gap: 16px;
+                margin-bottom: 28px;
+            }
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(245, 158, 11, 0.12);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            flex-shrink: 0;
+        }
+
+        @media (min-width: 480px) {
+            .contact-icon {
+                width: 52px;
+                height: 52px;
+                border-radius: 16px;
+            }
+        }
+
+        .contact-icon i {
+            font-size: 18px;
+            color: var(--gold);
+        }
+
+        @media (min-width: 480px) {
+            .contact-icon i {
+                font-size: 22px;
+            }
+        }
+
+        .contact-detail h4 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        @media (min-width: 480px) {
+            .contact-detail h4 {
+                font-size: 13px;
+                letter-spacing: 2px;
+                margin-bottom: 6px;
+            }
+        }
+
+        .contact-detail p,
+        .contact-detail a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+
+        @media (min-width: 480px) {
+            .contact-detail p,
+            .contact-detail a {
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .contact-detail p,
+            .contact-detail a {
+                font-size: 17px;
+            }
+        }
+
+        .contact-detail a:hover {
+            color: white;
+        }
+
+        .contact-form {
+            padding: 28px 20px;
+            background: white;
+        }
+
+        @media (min-width: 480px) {
+            .contact-form {
+                padding: 36px 28px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .contact-form {
+                padding: 56px 44px;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        @media (min-width: 480px) {
+            .form-group {
+                margin-bottom: 20px;
+            }
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        @media (min-width: 640px) {
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 18px;
+            }
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--gray-600);
+            margin-bottom: 4px;
+        }
+
+        @media (min-width: 480px) {
+            .form-group label {
+                font-size: 12px;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .form-group label {
+                font-size: 13px;
+            }
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 14px;
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            transition: all 0.2s;
+            background: var(--white);
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        @media (min-width: 480px) {
+            .form-control {
+                padding: 13px 16px;
+                border-radius: 14px;
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .form-control {
+                padding: 14px 18px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .form-control {
+                font-size: 16px;
+            }
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--navy);
+            box-shadow: 0 0 0 3px rgba(11, 61, 145, 0.08);
+        }
+
+        @media (min-width: 640px) {
+            .form-control:focus {
+                box-shadow: 0 0 0 4px rgba(11, 61, 145, 0.08);
+            }
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        @media (min-width: 480px) {
+            textarea.form-control {
+                min-height: 110px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            textarea.form-control {
+                min-height: 120px;
+            }
+        }
+
+        select.form-control {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="%23475569" d="M5.5 7.5L10 12l4.5-4.5"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 18px;
+            padding-right: 36px;
+            color: var(--gray-800);
+        }
+
+        @media (min-width: 480px) {
+            select.form-control {
+                background-position: right 14px center;
+                background-size: 20px;
+                padding-right: 40px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            select.form-control {
+                padding-right: 44px;
+            }
+        }
+
+        select.form-control option {
+            color: var(--gray-800);
+            background: white;
+        }
+
+        select.form-control option[value=""] {
+            color: var(--gray-400);
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            border: none;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 15px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 52px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        @media (min-width: 480px) {
+            .form-submit {
+                padding: 15px;
+                font-size: 16px;
+                margin-top: 14px;
+                min-height: 54px;
+                border-radius: 50px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .form-submit {
+                padding: 16px;
+                margin-top: 16px;
+                gap: 10px;
+            }
+        }
+
+        .form-submit:active {
+            transform: scale(0.98);
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+        }
+
+        @media (hover: hover) {
+            .form-submit:hover {
+                transform: translateY(-2px);
+                background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            }
+        }
+
+        .form-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #formMessage {
+            margin-top: 14px;
+            text-align: center;
+            font-weight: 500;
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+
+        @media (min-width: 480px) {
+            #formMessage {
+                margin-top: 16px;
+                padding: 12px;
+                border-radius: 12px;
+                font-size: 14px;
+            }
+        }
+
+        .form-message-success {
+            background: #D1FAE5;
+            color: #059669;
+        }
+
+        .form-message-error {
+            background: #FEE2E2;
+            color: #DC2626;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            color: white;
+            padding: 72px 0 32px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 56px;
+        }
+
+        @media (min-width: 640px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1.8fr 1fr 1fr 1.5fr;
+                gap: 48px;
+            }
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo-citrine {
+            font-family: 'Manrope', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .footer-logo-constructions {
+            font-family: 'Manrope', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .footer-desc {
+            color: var(--gray-400);
+            line-height: 1.7;
+            margin-bottom: 28px;
+            font-size: 15px;
+            max-width: 320px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .social-link:hover {
+            background: var(--gold);
+            color: white;
+            border-color: var(--gold);
+        }
+
+        .footer-title {
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 28px;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a i {
+            font-size: 11px;
+            color: var(--gold);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-links a:hover i {
+            opacity: 1;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 20px;
+            color: var(--gray-400);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .footer-contact-item i {
+            color: var(--gold);
+            font-size: 16px;
+            margin-top: 3px;
+            width: 18px;
+            text-align: center;
+        }
+
+        .footer-contact-item span {
+            color: var(--gray-400);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 14px;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 360px;
+            height: 100vh;
+            background: white;
+            z-index: 200;
+            padding: 24px;
+            transition: right 0.35s ease;
+            box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 32px;
+        }
+
+        .mobile-logo-citrine {
+            font-family: 'Manrope', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--navy);
+            letter-spacing: 4px;
+        }
+
+        .mobile-logo-constructions {
+            font-family: 'Manrope', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 3px;
+        }
+
+        .mobile-menu-close {
+            width: 48px;
+            height: 48px;
+            background: var(--gray-100);
+            border: none;
+            border-radius: 14px;
+            font-size: 24px;
+            color: var(--gray-700);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-nav-link {
+            display: block;
+            padding: 18px 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--gray-800);
+            text-decoration: none;
+            border-bottom: 1px solid var(--gray-200);
+            transition: all 0.2s;
+        }
+
+        .mobile-nav-link:active {
+            color: var(--navy);
+            padding-left: 8px;
+        }
+
+        .mobile-phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 36px;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 50px;
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            z-index: 150;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 99;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #128C7E;
+        }
+
+        .whatsapp-float:active {
+            transform: scale(0.95);
+        }
+
+        @media (max-width: 767px) {
+            .whatsapp-float {
+                bottom: 24px;
+                right: 24px;
+                width: 56px;
+                height: 56px;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">CITRINE<span>CONSTRUCTIONS</span></div>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo"><span class="logo-citrine">CITRINE</span><span class="logo-constructions">CONSTRUCTIONS</span></a>
+                <div class="nav">
+                    <div class="nav-links">
+                        <a href="#services" class="nav-link">Services</a>
+                        <a href="#process" class="nav-link">Process</a>
+                        <a href="#values" class="nav-link">Our Values</a>
+                        <a href="#about" class="nav-link">Why Us</a>
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </div>
+                    <a href="tel:+94113519991" class="header-phone"><i class="fas fa-phone-alt"></i> +94 11 351 9991</a>
+                </div>
+                <button class="mobile-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div><div class="mobile-logo-citrine">CITRINE</div><div class="mobile-logo-constructions">CONSTRUCTIONS</div></div>
+            <button class="mobile-menu-close" id="menuClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+        </div>
+        <a href="#services" class="mobile-nav-link">Services</a>
+        <a href="#process" class="mobile-nav-link">Process</a>
+        <a href="#values" class="mobile-nav-link">Our Values</a>
+        <a href="#about" class="mobile-nav-link">Why Us</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+        <a href="tel:+94113519991" class="mobile-phone"><i class="fas fa-phone-alt"></i> +94 11 351 9991</a>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-pattern"></div>
+        <div class="hero-grid"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-trophy"></i> Trusted Builders</div>
+                <h1 class="hero-title">Building <span>excellence</span><br>that lasts generations</h1>
+                <p class="hero-text">We deliver exceptional residential, commercial, and industrial construction services across Sri Lanka. Our commitment to quality, safety, and timely delivery sets us apart.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get Free Quote <i class="fas fa-arrow-right"></i></a>
+                    <a href="#values" class="btn btn-secondary">Our Values <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item"><div class="stat-value">200+</div><div class="stat-label">Design Concepts</div></div>
+                    <div class="stat-item"><div class="stat-value">100%</div><div class="stat-label">Commitment</div></div>
+                    <div class="stat-item"><div class="stat-value">99%</div><div class="stat-label">Quality Assurance</div></div>
+                    <div class="stat-item"><div class="stat-value">99%</div><div class="stat-label">On-Time Delivery</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header"><div class="section-tag"><i class="fas fa-circle"></i> Our Expertise</div><h2 class="section-title">Comprehensive construction solutions</h2><p class="section-desc">From concept to completion, we deliver exceptional quality across residential, commercial, industrial, and specialized infrastructure sectors.</p></div>
+            <div class="services-grid">
+                <div class="service-card"><div class="service-icon"><i class="fas fa-home"></i></div><h3>Residential Construction</h3><p>From contemporary villas to luxury apartment complexes, we craft living spaces that blend Sri Lankan heritage with modern sophistication.</p><ul class="service-list"><li><i class="fas fa-check-circle"></i> Custom luxury homes & villas</li><li><i class="fas fa-check-circle"></i> Multi-unit residential developments</li><li><i class="fas fa-check-circle"></i> Renovations & extensions</li><li><i class="fas fa-check-circle"></i> Interior fit-outs & landscaping</li></ul></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-building"></i></div><h3>Commercial Construction</h3><p>We build business environments that inspire productivity and impress clients across Colombo and beyond.</p><ul class="service-list"><li><i class="fas fa-check-circle"></i> Office buildings & corporate HQs</li><li><i class="fas fa-check-circle"></i> Retail spaces & shopping complexes</li><li><i class="fas fa-check-circle"></i> Hotels & hospitality venues</li><li><i class="fas fa-check-circle"></i> Healthcare & educational facilities</li></ul></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-industry"></i></div><h3>Industrial Construction</h3><p>Specialized industrial construction meeting international standards for safety, durability, and operational efficiency.</p><ul class="service-list"><li><i class="fas fa-check-circle"></i> Factories & manufacturing plants</li><li><i class="fas fa-check-circle"></i> Warehouses & logistics centers</li><li><i class="fas fa-check-circle"></i> Cold storage & processing facilities</li><li><i class="fas fa-check-circle"></i> Infrastructure & civil works</li></ul></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-road"></i></div><h3>Road Construction</h3><p>We deliver high-quality road infrastructure including highways, rural roads, and urban streets with expert engineering and durable materials.</p><ul class="service-list"><li><i class="fas fa-check-circle"></i> Highway & expressway construction</li><li><i class="fas fa-check-circle"></i> Rural & urban road development</li><li><i class="fas fa-check-circle"></i> Asphalt paving & resurfacing</li><li><i class="fas fa-check-circle"></i> Drainage & culvert systems</li><li><i class="fas fa-check-circle"></i> Road maintenance & rehabilitation</li></ul></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-solar-panel"></i></div><h3>Solar Energy Projects</h3><p>Harness the power of the sun with our turnkey solar solutions for residential, commercial, and utility-scale applications.</p><ul class="service-list"><li><i class="fas fa-check-circle"></i> Rooftop solar PV systems</li><li><i class="fas fa-check-circle"></i> Ground-mounted solar farms</li><li><i class="fas fa-check-circle"></i> Solar carports & structures</li><li><i class="fas fa-check-circle"></i> Net metering & grid integration</li><li><i class="fas fa-check-circle"></i> Solar maintenance & monitoring</li></ul></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-cubes"></i></div><h3>Precast Concrete Solutions</h3><p>Accelerate construction with our high-quality precast elements manufactured in controlled environments for superior strength and finish.</p><ul class="service-list"><li><i class="fas fa-check-circle"></i> Precast wall panels & columns</li><li><i class="fas fa-check-circle"></i> Pre-stressed beams & slabs</li><li><i class="fas fa-check-circle"></i> Hollow core flooring systems</li><li><i class="fas fa-check-circle"></i> Boundary walls & fencing</li><li><i class="fas fa-check-circle"></i> Drainage & U-channel solutions</li></ul></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process-section" id="process">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag"><i class="fas fa-circle"></i> How We Work</div>
+                <h2 class="section-title">A seamless four-step process</h2>
+                <p class="section-desc">From initial consultation to final handover, we make construction simple, transparent, and stress-free.</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-row">
+                    <div class="process-number-wrapper"><div class="process-number">1</div></div>
+                    <div class="process-card">
+                        <div class="process-card-header">
+                            <span class="process-step-badge"><i class="fas fa-circle"></i> Step One</span>
+                            <span class="process-duration"><i class="far fa-clock"></i> 3-5 Days</span>
+                        </div>
+                        <h4>Consultation & Briefing</h4>
+                        <p>We meet to understand your vision, requirements, budget, and timeline. Our experts provide initial guidance and feasibility assessment.</p>
+                        <div class="process-tags">
+                            <span class="process-tag"><i class="fas fa-check"></i> Free Consultation</span>
+                            <span class="process-tag"><i class="fas fa-check"></i> Site Visit</span>
+                            <span class="process-tag"><i class="fas fa-check"></i> Budget Planning</span>
+                            <span class="process-tag"><i class="fas fa-check"></i> Feasibility Study</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-row">
+                    <div class="process-number-wrapper"><div class="process-number">2</div></div>
+                    <div class="process-card">
+                        <div class="process-card-header">
+                            <span class="process-step-badge"><i class="fas fa-circle"></i> Step Two</span>
+                            <span class="process-duration"><i class="far fa-clock"></i> 1-3 Weeks</span>
+                        </div>
+                        <h4>Design & Planning</h4>
+                        <p>Our architects and engineers create detailed plans, 3D visualizations, and a transparent, itemized quotation for your approval.</p>
+                        <div class="process-tags">
+                            <span class="process-tag"><i class="fas fa-check"></i> 3D Visualizations</span>
+                            <span class="process-tag"><i class="fas fa-check"></i> Detailed BOQ</span>
+                            <span class="process-tag"><i class="fas fa-check"></i> Permit Assistance</span>
+                            <span class="process-tag"><i class="fas fa-check"></i> Material Selection</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-row">
+                    <div class="process-number-wrapper"><div class="process-number">3</div></div>
+                    <div class="process-card">
+                        <div class="process-card-header">
+                            <span class="process-step-badge"><i class="fas fa-circle"></i> Step Three</span>
+                            <span class="process-duration"><i class="far fa-clock"></i> As Scheduled</span>
+                        </div>
+                        <h4>Construction & Management</h4>
+                        <p>Expert execution with regular site meetings, progress updates, and rigorous quality inspections at every milestone.</p>
+                        <div class="process-tags">
+                            <span class="process-tag"><i class="fas fa-check"></i> Weekly Updates</span>
+                            <span class="process-tag"><i class="fas fa-check"></i> Quality Inspections</span>
+                            <span class="process-tag"><i class="fas fa-check"></i> Safety Protocols</span>
+                            <span class="process-tag"><i class="fas fa-check"></i> Progress Reports</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-row">
+                    <div class="process-number-wrapper"><div class="process-number">4</div></div>
+                    <div class="process-card">
+                        <div class="process-card-header">
+                            <span class="process-step-badge"><i class="fas fa-circle"></i> Step Four</span>
+                            <span class="process-duration"><i class="far fa-clock"></i> 1-2 Days</span>
+                        </div>
+                        <h4>Handover & Support</h4>
+                        <p>Comprehensive final inspection and formal handover with 12-month post-completion support for complete peace of mind.</p>
+                        <div class="process-tags">
+                            <span class="process-tag"><i class="fas fa-check"></i> Final Inspection</span>
+                            <span class="process-tag"><i class="fas fa-check"></i> Documentation</span>
+                            <span class="process-tag"><i class="fas fa-check"></i> 12-Month Warranty</span>
+                            <span class="process-tag"><i class="fas fa-check"></i> Ongoing Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guarantee-box">
+                <div class="guarantee-icon-box"><i class="fas fa-shield-alt"></i></div>
+                <h3>The Citrine Quality Guarantee</h3>
+                <p>Premium materials from certified suppliers · Skilled in-house craftsmen · Rigorous quality control · On-time delivery commitment · 12-month defect liability period.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="section" id="values">
+        <div class="container">
+            <div class="section-header"><div class="section-tag"><i class="fas fa-circle"></i> What Drives Us</div><h2 class="section-title">Our core values & principles</h2><p class="section-desc">These foundational beliefs guide every decision we make and every project we undertake.</p></div>
+            <div class="values-grid">
+                <div class="value-card"><div class="value-icon"><i class="fas fa-hand-holding-heart"></i></div><h3>Integrity First</h3><p>We believe in complete honesty and transparency. From clear quotations to open communication, we build trust through our actions.</p><div class="value-quote">"We do what we say we will do."</div></div>
+                <div class="value-card"><div class="value-icon"><i class="fas fa-gem"></i></div><h3>Excellence Without Compromise</h3><p>We pursue perfection in every detail—from foundation to finishing touches.</p><div class="value-quote">"Good enough is never good enough."</div></div>
+                <div class="value-card"><div class="value-icon"><i class="fas fa-users"></i></div><h3>People-Centered Approach</h3><p>Great buildings are built by great people. We treat every client relationship as a long-term partnership.</p><div class="value-quote">"Relationships built on respect and trust."</div></div>
+                <div class="value-card"><div class="value-icon"><i class="fas fa-leaf"></i></div><h3>Sustainable Stewardship</h3><p>We champion sustainable construction practices and design for energy efficiency and longevity.</p><div class="value-quote">"Building today with tomorrow in mind."</div></div>
+                <div class="value-card"><div class="value-icon"><i class="fas fa-lightbulb"></i></div><h3>Innovation & Adaptability</h3><p>We embrace new technologies and modern methodologies to deliver better results faster.</p><div class="value-quote">"Embracing change to deliver better value."</div></div>
+                <div class="value-card"><div class="value-icon"><i class="fas fa-handshake"></i></div><h3>Accountability & Ownership</h3><p>We take full ownership of every project. We don't make excuses; we make things right.</p><div class="value-quote">"Your project is our responsibility."</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header"><div class="section-tag"><i class="fas fa-circle"></i> The Citrine Difference</div><h2 class="section-title">Built on trust and quality</h2><p class="section-desc">What makes Citrine Constructions the preferred choice for discerning clients across Sri Lanka.</p></div>
+            <div class="features-grid">
+                <div class="feature-card"><div class="feature-icon"><i class="fas fa-medal"></i></div><h4>Quality Assured</h4><p>Certified processes and premium materials ensure lasting results.</p></div>
+                <div class="feature-card"><div class="feature-icon"><i class="fas fa-calendar-check"></i></div><h4>On-Time Delivery</h4><p>98% of our projects will be completed on or ahead of schedule.</p></div>
+                <div class="feature-card"><div class="feature-icon"><i class="fas fa-hard-hat"></i></div><h4>Safety First Culture</h4><p>Exemplary safety will be provided with zero major incidents.</p></div>
+                <div class="feature-card"><div class="feature-icon"><i class="fas fa-file-invoice"></i></div><h4>Transparent Pricing</h4><p>Detailed, Itemized quotations with no hidden costs.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to start your project?</h2>
+                <p class="cta-desc">Get a free, no-obligation consultation and detailed quote from our expert team.</p>
+                <a href="#contact" class="cta-btn">Schedule Your Free Consultation <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header"><div class="section-tag"><i class="fas fa-circle"></i> Get In Touch</div><h2 class="section-title">Let's discuss your vision</h2><p class="section-desc">Free consultation · Detailed quotation · Response within 24 hours</p></div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact us</h3>
+                    <div class="contact-item"><div class="contact-icon"><i class="fas fa-map-pin"></i></div><div class="contact-detail"><h4>Head Office</h4><p>314/2A Mahalwarawa Junction, Kottawa, Pannipitiya, Sri Lanka</p></div></div>
+                    <div class="contact-item"><div class="contact-icon"><i class="fas fa-phone-alt"></i></div><div class="contact-detail"><h4>Call Us</h4><a href="tel:+94113519991">+94 11 351 9991</a><br><a href="tel:+94777381995">+94 777 381 995 (Mobile)</a></div></div>
+                    <div class="contact-item"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div class="contact-detail"><h4>Email Us</h4><a href="mailto:info@citrineconstructions.com">info@citrineconstructions.com</a></div></div>
+                    <div class="contact-item"><div class="contact-icon"><i class="fas fa-clock"></i></div><div class="contact-detail"><h4>Business Hours</h4><p>Mon-Sat: 8:00 AM – 5:00 PM</p></div></div>
+                </div>
+                <div class="contact-form">
+                    <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+                        <input type="hidden" name="access_key" value="9610a011-8aa0-4211-a8cf-2b8d3299c7c2">
+                        <input type="hidden" name="redirect" value="">
+                        <input type="hidden" name="subject" value="New Contact Form Submission - Citrine Constructions">
+                        <input type="hidden" name="from_name" value="Citrine Constructions Website">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off">
+                        <div class="form-row">
+                            <div class="form-group"><label>Full Name *</label><input type="text" name="name" id="name" class="form-control" placeholder="John Doe" required></div>
+                            <div class="form-group"><label>Email Address *</label><input type="email" name="email" id="email" class="form-control" placeholder="john@example.com" required></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" id="phone" class="form-control" placeholder="+94 XX XXX XXXX" required></div>
+                            <div class="form-group"><label>Project Type *</label><select name="project_type" id="project" class="form-control" required><option value="">Select project type</option><option>Residential Construction</option><option>Commercial Construction</option><option>Industrial Construction</option><option>Road Construction</option><option>Solar Projects</option><option>Precast Concrete Solutions</option><option>Renovation & Remodeling</option><option>Interior Fit-out</option><option>Consultation Only</option></select></div>
+                        </div>
+                        <div class="form-group"><label>Project Details *</label><textarea name="message" id="message" class="form-control" placeholder="Please describe your project..." required></textarea></div>
+                        <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+                        <div id="formMessage"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><div class="footer-logo-citrine">CITRINE</div><div class="footer-logo-constructions">CONSTRUCTIONS</div><p class="footer-desc">Sri Lanka's trusted construction partner. We build with integrity, quality, and a commitment to excellence that lasts generations.</p><div class="social-links"><a href="https://www.facebook.com/share/14ZSX6Abdao/?mibextid=wwXIfr" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+                <div><h4 class="footer-title">Quick Links</h4><ul class="footer-links"><li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li><li><a href="#process"><i class="fas fa-chevron-right"></i> Our Process</a></li><li><a href="#values"><i class="fas fa-chevron-right"></i> Our Values</a></li><li><a href="#about"><i class="fas fa-chevron-right"></i> Why Choose Us</a></li><li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li></ul></div>
+                <div><h4 class="footer-title">Our Services</h4><ul class="footer-links"><li><a href="#services"><i class="fas fa-chevron-right"></i> Residential Construction</a></li><li><a href="#services"><i class="fas fa-chevron-right"></i> Commercial Construction</a></li><li><a href="#services"><i class="fas fa-chevron-right"></i> Industrial Construction</a></li><li><a href="#services"><i class="fas fa-chevron-right"></i> Road Construction</a></li><li><a href="#services"><i class="fas fa-chevron-right"></i> Solar Projects</a></li><li><a href="#services"><i class="fas fa-chevron-right"></i> Precast Solutions</a></li></ul></div>
+                <div><h4 class="footer-title">Contact Info</h4><div class="footer-contact-item"><i class="fas fa-map-pin"></i><span>314/2A Mahalwarawa Junction,<br>Kottawa, Pannipitiya, Sri Lanka</span></div><div class="footer-contact-item"><i class="fas fa-phone-alt"></i><span>+94 11 351 9991<br>+94 777 381 995</span></div><div class="footer-contact-item"><i class="fas fa-envelope"></i><span>info@citrineconstructions.com</span></div><div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon-Sat: 8:00 AM – 5:00 PM</span></div></div>
+            </div>
+            <div class="footer-bottom">© 2026 Citrine Constructions (PVT) LTD. All Rights Reserved. | Subsidiary of Citrine Holdings (PVT) LTD</div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/94777381995" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        // Reset scroll position on page load
+        window.onbeforeunload = function () { window.scrollTo(0, 0); };
+        if (history.scrollRestoration) { history.scrollRestoration = 'manual'; }
+        window.scrollTo(0, 0);
+
+        // Loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('fade-out');
+                setTimeout(() => { document.getElementById('loader').style.display = 'none'; }, 400);
+            }, 800);
+            window.scrollTo(0, 0);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile Menu
+        const toggle = document.getElementById('menuToggle');
+        const close = document.getElementById('menuClose');
+        const menu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('overlay');
+        
+        function openMenu() { 
+            menu.classList.add('active'); 
+            overlay.classList.add('active'); 
+            document.body.classList.add('menu-open'); 
+        }
+        
+        function closeMenu() { 
+            menu.classList.remove('active'); 
+            overlay.classList.remove('active'); 
+            document.body.classList.remove('menu-open'); 
+        }
+        
+        toggle.addEventListener('click', openMenu);
+        close.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+        document.querySelectorAll('.mobile-nav-link, .mobile-phone').forEach(l => l.addEventListener('click', closeMenu));
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+        // Contact Form - Working Submission with Web3Forms
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = form.querySelector('.form-submit');
+            const originalBtnHTML = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Clear previous messages
+            formMessage.textContent = '';
+            formMessage.className = '';
+            
+            try {
+                const formData = new FormData(form);
+                
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Success!
+                    formMessage.textContent = '✓ Thank you! Your message has been sent successfully. We will contact you within 24 hours.';
+                    formMessage.className = 'form-message-success';
+                    form.reset();
+                    formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    throw new Error(result.message || 'Form submission failed. Please try again.');
+                }
+            } catch (error) {
+                // Error handling
+                formMessage.textContent = '✗ ' + (error.message || 'Something went wrong. Please try again or contact us directly by phone or email.');
+                formMessage.className = 'form-message-error';
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } finally {
+                // Reset button
+                submitBtn.innerHTML = originalBtnHTML;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', (e) => {
+                const href = a.getAttribute('href');
+                if (href === '#' || (href === '#contact' && !a.closest('.cta-btn'))) return; 
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    const headerOffset = 88;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
